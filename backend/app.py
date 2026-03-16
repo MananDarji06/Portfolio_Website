@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for all routes to allow frontend requests
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://manan-darji-portfolio.vercel.app"}})
 
 @app.route("/", methods=["GET"])
 def home():
@@ -122,7 +122,7 @@ def contact():
 if __name__ == "__main__":
     # Get configuration from environment variables
     port = int(os.environ.get("PORT", 5000))
-    debug = os.environ.get("FLASK_DEBUG", "True").lower() == "true"
+    debug = os.environ.get("FLASK_DEBUG", "False").lower() == "true"
     
     # Run the Flask application
     app.run(host="0.0.0.0", port=port, debug=debug)

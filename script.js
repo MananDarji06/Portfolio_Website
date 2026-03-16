@@ -242,7 +242,7 @@ contactForm.addEventListener('submit', async (e) => {
   if (btnText) btnText.textContent = 'Sending...';
 
   try {
-    const res = await fetch('http://127.0.0.1:5000/contact', {
+    const res = await fetch('https://portfolio-website-n29f.onrender.com/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message }),

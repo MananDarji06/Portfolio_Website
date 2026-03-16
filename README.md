@@ -37,14 +37,33 @@ This project serves as a comprehensive digital resume and interactive showcase. 
 ```
 
 ## Deployment
-This static portfolio can easily be deployed via **GitHub Pages**:
-1. Go to your repository settings on GitHub.
-2. Navigate to the **Pages** section on the left sidebar.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and `/` (root) folder, then click **Save**.
-5. Once built, GitHub will provide a live URL to access the site!
 
----
+The portfolio is deployed using a modern full-stack architecture.
+
+### Frontend
+The frontend (HTML, CSS, JavaScript) is deployed using **Vercel**.
+
+Vercel automatically builds and deploys the site whenever changes are pushed to the GitHub repository.
+
+Live Site:
+https://manan-darji-portfolio.vercel.app
+
+
+### Backend
+The Flask backend used for processing the contact form is deployed using **Render**.
+
+The backend exposes an API endpoint that the frontend communicates with to handle form submissions.
+
+Example API endpoint:
+https://portfolio-website-n29f.onrender.com/contact
+
+
+### Deployment Workflow
+
+1. Push changes to the GitHub repository
+2. Vercel automatically redeploys the frontend
+3. Render runs the Flask backend service
+4. The frontend communicates with the backend API
 
 ## Author
 

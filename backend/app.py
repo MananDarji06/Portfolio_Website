@@ -62,6 +62,9 @@ def contact():
         sender_email = os.getenv("EMAIL_ADDRESS")
         sender_password = os.getenv("EMAIL_PASSWORD")
 
+        print("Sender email:", sender_email)
+        print("Password present:", bool(sender_password))
+
         if not sender_email or not sender_password:
             # Log this error on the server side
             print("Configuration Error: EMAIL_ADDRESS or EMAIL_PASSWORD not set.")
@@ -94,6 +97,7 @@ def contact():
             server.starttls()
             server.login(sender_email, sender_password)
             server.send_message(msg)
+
             
         return jsonify({
             "success": True, 

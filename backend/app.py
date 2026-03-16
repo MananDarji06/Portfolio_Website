@@ -94,7 +94,9 @@ def contact():
 
         # Connect to Gmail SMTP server
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.ehlo()
             server.starttls()
+            server.ehlo()
             server.login(sender_email, sender_password)
             server.send_message(msg)
 

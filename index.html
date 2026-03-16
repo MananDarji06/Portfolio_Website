@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manan Darji — Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Manan Darji — a developer crafting clean, performant web experiences with AI/ML and Full Stack expertise." />
+
+  <!-- Google Fonts — Sora (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/design-tokens.css">
+  <link rel="stylesheet" href="styles/comp-layout.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <link rel="stylesheet" href="styles/about.css">
+  <link rel="stylesheet" href="styles/skills.css">
+  <link rel="stylesheet" href="styles/projects.css">
+  <link rel="stylesheet" href="styles/exp-timeline.css">
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body>
+
+  <!-- Page loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="my-logo">Manan Darji</div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/resume/Manan_Darji_Resume.pdf">Resume</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+
+    <div class="social-links">
+      <a class="social-link" href="https://github.com/MananDarji06" target="_blank" rel="noopener noreferrer"
+        aria-label="GitHub">
+        <img src="assets/images/github-icon.png" alt="GitHub">
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/in/manan-darji-573a87359/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="assets/images/linkedin-icon.png" alt="LinkedIn">
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1>Manan Darji</h1>
+        <p class="hero-subtitle">AI & ML Engineer | Full Stack Developer</p>
+        <p class="hero-tagline">Building intelligent, user-focused digital systems.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="assets/resume/Manan_Darji_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+        </div>  
+      </div>
+      
+      <div class="hero-image-container">
+        <div class="hexagon-frame">
+          <img src="assets/images/manan-darji.png" alt="Manan Darji">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+
+      <p class="about-bio reveal">I am a B.Tech student specializing in Artificial Intelligence and Machine Learning with
+        strong interest in Full Stack Development and UI/UX design. I enjoy building scalable web applications and
+        solving real-world problems.</p>
+
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-count="4">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="8">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="1">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Teaching</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Technologies I Work With</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Web Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>AI / Data Science</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Computer Vision</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Databases & Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Google Colab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <div class="project-number">01</div>
+          <div class="project-info">
+            <h3>Mutual Fund & SIP Simulator</h3>
+            <p>Financial simulation tool for long-term investment visualization. Designed investment logic, return
+              calculation system, and user-focused educational interface.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Finance API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/MananDarji06/Wealth_Builder_Lab" class="btn-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <div class="project-number">02</div>
+          <div class="project-info">
+            <h3>Stock Trading Simulator</h3>
+            <p>Offline trading simulation platform for risk-free learning. Implemented virtual trading mechanics with
+              profit/loss tracking.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Charts</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/MananDarji06/Market_Lab" class="btn-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal">
+          <div class="project-number">03</div>
+          <div class="project-info">
+            <h3>AI Face Detection System</h3>
+            <p>Deep learning-based real-time face detection application. Integrated camera stream processing with
+              bounding box rendering and GUI interface.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Deep Learning</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/MananDarji06/Face_Recognition_System" class="btn-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal">
+          <div class="project-number">04</div>
+          <div class="project-info">
+            <h3>Personal Portfolio Website</h3>
+            <p>Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript. Implemented
+              dark/light theme toggle, scroll-based animations, structured layout, and Flask backend integration for
+              contact form.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Professional Journey</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <span class="timeline-date">June 2024 — Present · <span id="teachingDuration"></span></span>
+          <h3>Academic Tutor</h3>
+          <p class="timeline-company">Arihant Academy</p>
+          <p>Mentored students while pursuing engineering. Developed leadership, communication, and structured planning
+            skills. Taught Mathematics and Science to students and designed engaging lesson plans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc contact-desc">Have a question or want to work together? Send me a message.</p>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <span class="form-error" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <span class="form-error" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+          <span class="form-error" id="message-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="contact-btn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-icon">→</span>
+        </button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

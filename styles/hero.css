@@ -1,0 +1,118 @@
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nav-height) 0 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Side-by-side layout: text left, image right */
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 620px;
+  margin: 0;
+  text-align: left;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 14px;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0 0 44px;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatHero 6s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes floatHero {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.hexagon-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexagon-frame::before {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  background: linear-gradient(135deg, #00f0ff, #0066ff);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  filter: blur(15px);
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.hexagon-frame::after {
+  content: "";
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  background: linear-gradient(135deg, #00f0ff, #0066ff);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  z-index: 2;
+}
+
+.hexagon-frame img {
+  position: relative;
+  width: 94%;
+  height: 94%;
+  object-fit: cover;
+  object-position: center 20%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  z-index: 3;
+  transform: scale(1.02);
+}

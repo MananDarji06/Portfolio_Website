@@ -1,0 +1,653 @@
+/* ============================================
+   RESPONSIVE STYLES
+   Only additive — no existing desktop rules modified.
+   Breakpoints: 1024 px · 768 px · 480 px
+   ============================================ */
+
+/* ---------- hamburger button (hidden on desktop) ---------- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  z-index: 1100;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.menu-toggle:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease, background var(--transition);
+}
+
+/* animated X when open */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* mobile overlay backdrop */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.nav-overlay.visible {
+  opacity: 1;
+}
+
+/* ============================================
+   TABLET — max-width: 1024px
+   ============================================ */
+@media (max-width: 1024px) {
+
+  /* Container */
+  .container {
+    padding: 0 32px;
+  }
+
+  /* Sections */
+  section {
+    padding: 96px 0;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0 32px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-tagline {
+    max-width: 420px;
+  }
+
+  .hero-image-container {
+    width: 280px;
+    height: 310px;
+    flex-shrink: 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Skills grid — 2 columns */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* About stats */
+  .about-stats {
+    gap: 48px;
+  }
+
+  .stat-item::after {
+    right: -24px;
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: 48px;
+  }
+}
+
+
+/* ============================================
+   MOBILE — max-width: 768px
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* ---- Hamburger visible ---- */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* ---- Nav links become slide-down drawer ---- */
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px 24px 24px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.35s ease,
+                padding 0.35s ease;
+    z-index: 1001;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-links.open {
+    max-height: 480px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 16px 24px 24px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a:last-of-type {
+    border-bottom: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  /* Theme toggle inside drawer */
+  .nav-links .theme-toggle {
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+
+  /* Overlay visible */
+  .nav-overlay.visible {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Hide desktop social links in navbar */
+  .navbar .social-links {
+    display: none;
+  }
+
+  /* ---- Navbar ---- */
+  .navbar {
+    padding: 0 20px;
+  }
+
+  /* ---- Container ---- */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ---- Sections ---- */
+  section {
+    padding: 72px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* ---- Typography ---- */
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  /* ---- Hero ---- */
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero {
+    min-height: 85vh;
+    padding-top: calc(var(--nav-height) + 24px);
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin: 0 auto 14px;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin: 0 auto 32px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+    
+  .hero-image-container {
+    width: 240px;
+    height: 265px;
+    margin: 0 auto;
+  }
+
+  /* ---- About ---- */
+  .about-bio {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .stat-item::after {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* ---- Skills grid — 2 col ---- */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .skill-card {
+    padding: 22px 18px;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+
+  /* ---- Projects grid — 1 col ---- */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-info {
+    padding: 24px;
+  }
+
+  .project-number {
+    font-size: 2.5rem;
+    top: 12px;
+    right: 16px;
+  }
+
+  /* ---- Experience / Timeline ---- */
+  .timeline {
+    padding-left: 28px;
+    max-width: 100%;
+  }
+
+  .timeline-item::before {
+    left: -32px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
+
+  /* ---- Contact ---- */
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-desc {
+    max-width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  /* ---- Buttons (global mobile) ---- */
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn-full {
+    padding: 16px 24px;
+  }
+
+  /* ---- Back to top ---- */
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================================
+   SMALL MOBILE — max-width: 480px
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* Container */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Sections */
+  section {
+    padding: 56px 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0 16px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 2.15rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions .btn {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .hero-image-container {
+    width: 180px;
+    height: 200px;
+  }
+
+  /* About */
+  .about-bio {
+    font-size: 0.9rem;
+  }
+
+  .about-stats {
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+
+  /* Skills — single column */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 20px 16px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .skill-tag {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  /* Projects */
+  .projects-grid {
+    gap: 16px;
+  }
+
+  .project-info {
+    padding: 20px 16px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.88rem;
+  }
+
+  .project-number {
+    font-size: 2rem;
+    top: 10px;
+    right: 12px;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .timeline-item::before {
+    left: -28px;
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+  }
+
+  .timeline-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+  }
+
+  .timeline-company {
+    font-size: 0.82rem;
+  }
+
+  /* Contact */
+  .form-group label {
+    font-size: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 110px;
+  }
+
+  /* Nav drawer */
+  .nav-links {
+    padding: 12px 16px 20px;
+  }
+
+  .nav-links.open {
+    padding: 12px 16px 20px;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 0.95rem;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ============================================
+   EXTRA-SMALL — max-width: 360px
+   ============================================ */
+@media (max-width: 360px) {
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  h2,
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 0.82rem;
+  }
+}
+
+
+/* ============================================
+   PREVENT HORIZONTAL SCROLL (all sizes)
+   ============================================ */
+html,
+body {
+  overflow-x: hidden;
+}

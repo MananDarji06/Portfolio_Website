@@ -55,7 +55,7 @@ The Flask backend used for processing the contact form is deployed using **Rende
 The backend exposes an API endpoint that the frontend communicates with to handle form submissions.
 
 Example API endpoint:
-https://portfolio-website-n29f.onrender.com/contact
+https://portfolio-backend-l7w3.onrender.com/contact
 
 
 ### Deployment Workflow

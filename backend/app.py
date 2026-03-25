@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Enable CORS for all routes to allow frontend requests
-CORS(app, resources={r"/*": {"origins": "https://manan-darji-portfolio.vercel.app"}})
+CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
